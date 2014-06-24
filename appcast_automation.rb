@@ -131,11 +131,9 @@ class AppCast
   end
 
   def get_key
-    key_xml = `security find-generic-password -g -s "#{@keychain_privkey_name}" 2>&1 1>/dev/null`
-    xml = key_xml.gsub(/\\012/, "\n")
-    xml = "<?xml version=".concat(xml.split("<?xml version=")[1])
-    doc = Nokogiri::XML(xml)
-    doc.xpath("//key").xpath("//string").text
+    file = File.open("#{@keychain_privkey_name}", "rb")
+    contents = file.read
+    return contents
   end
 
   def create_key
