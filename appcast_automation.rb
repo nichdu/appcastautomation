@@ -34,7 +34,7 @@ class AppCast
   require 'base64'
 
   MESSAGE_HEADER   = 'RUN SCRIPT DURING BUILD MESSAGE'
-  YAML_FOLDER_PATH = "#{ENV['HOME']}/Documents/Projects/_project_yaml/#{ENV['PROJECT_NAME']}/"
+  YAML_FOLDER_PATH = "/Users/administrator/yml/#{ENV['PROJECT_NAME']}/"
 
   def initialize
     @signature = ''
